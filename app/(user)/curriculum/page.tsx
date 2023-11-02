@@ -1,5 +1,19 @@
 function Curriculum() {
   const pr = ["First", "Second", "Third", "Fourth"];
+  const subjects = [ 
+    { title : "IRS",
+      link : "/"
+  },
+  { title : "SAD",
+      link : "/"
+  },
+  { title : "IOE",
+      link : "/"
+  },
+  { title : "DS",
+      link : "/"
+  }
+  ]
   return (
     <main className="max-w-7xl mx-auto p-5">
       <h1 className="font-bold text-4xl">
@@ -12,12 +26,16 @@ function Curriculum() {
             <p className="font-semibold text-xl">
               {p} Year - Information Technology
             </p>
-            <div className="space-y-3 mt-4">
-              <p>Subject</p>
-              <p>Subject</p>
-              <p>Subject</p>
-              <p>Subject</p>
-              <p>Subject</p>
+            <div className="space-y-3 mt-4 flex flex-col">
+              {
+                subjects.map((subject)=>(
+                  <a key={subject.title} href={subject.link}>
+                    {
+                      subject.title 
+                    }
+                  </a>
+                ))
+              }
             </div>
           </div>
         ))}
